@@ -3,16 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "engines": { "node": "20.x" },
-
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "vercel-build": "node ./scripts/check-deps.js && npm run build",
-    "postinstall": "node ./scripts/check-deps.js",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-
   "dependencies": {
     "@upstash/redis": "^1.35.3",
     "fs-extra": "9.1.0",
@@ -23,19 +19,13 @@
     "react-scripts": "5.0.1",
     "web-vitals": "^5.1.0"
   },
-
   "devDependencies": {
     "vercel": "^46.0.2"
   },
-
   "overrides": {
     "fs-extra": "9.1.0",
     "webpack-sources": "3.2.3"
-  },
-
-  "browserslist": {
-    "production": [">0.2%", "not dead", "not op_mini all"],
-    "development": ["last 1 chrome version", "last 1 firefox version", "last 1 safari version"]
   }
 }
+
 
