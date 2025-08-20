@@ -1,40 +1,41 @@
 {
-  "name": "oconnor-detailing-v2",
+  "name": "oconnor-detailing",
   "version": "0.1.0",
   "private": true,
-  "dependencies": {
-    "@testing-library/dom": "^10.4.1",
-    "@testing-library/jest-dom": "^6.7.0",
-    "@testing-library/react": "^16.3.0",
-    "@testing-library/user-event": "^13.5.0",
-    "react": "^19.1.1",
-    "react-dom": "^19.1.1",
-    "react-router-dom": "^7.8.1",
-    "react-scripts": "5.0.1",
-    "web-vitals": "^2.1.4"
-  },
+  "engines": { "node": "20.x" },
+
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "vercel-build": "node ./scripts/check-deps.js && npm run build",
+    "postinstall": "node ./scripts/check-deps.js",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+
+  "dependencies": {
+    "@upstash/redis": "^1.35.3",
+    "fs-extra": "9.1.0",
+    "nodemailer": "^6.9.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.22.0",
+    "react-scripts": "5.0.1",
+    "web-vitals": "^5.1.0"
   },
+
+  "devDependencies": {
+    "vercel": "^46.0.2"
+  },
+
+  "overrides": {
+    "fs-extra": "9.1.0",
+    "webpack-sources": "3.2.3"
+  },
+
   "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+    "production": [">0.2%", "not dead", "not op_mini all"],
+    "development": ["last 1 chrome version", "last 1 firefox version", "last 1 safari version"]
   }
 }
+
