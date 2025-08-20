@@ -1,0 +1,22 @@
+.package-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: space-around;
+}
+
+.package-card {
+  flex: 1 1 300px;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  padding: 1rem;
+  background-color: #fafafa;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.extras-section {
+  margin-top: 2rem;
+  padding: 1rem;
+  background: #fff8e1;
+  border: 1px dashed #caa;
+}

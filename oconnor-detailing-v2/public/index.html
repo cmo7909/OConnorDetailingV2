@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta name="description" content="O'Connor Auto Detailing" />
+    <title>O'Connor Auto Detailing</title>
+
+    <!-- Dev-only filter for noisy ResizeObserver errors -->
+    <script>
+      if (location.hostname === 'localhost') {
+        // Run in capture phase to beat the overlay
+        window.addEventListener(
+          'error',
+          function (event) {
+            var msg = (event && event.message) || '';
+            if (
+              msg === 'ResizeObserver loop limit exceeded' ||
+              msg === 'ResizeObserver loop completed with undelivered notifications.'
+            ) {
+              event.preventDefault();
+              event.stopImmediatePropagation();
+            }
+          },
+          true
+        );
+
+        // Some libs log it via console.error; filter that too
+        (function () {
+          var origError = console.error;
+          console.error = function () {
+            var first = arguments[0];
+            if (
+              typeof first === 'string' &&
+              (first.includes('ResizeObserver loop limit exceeded') ||
+                first.includes('ResizeObserver loop completed with undelivered notifications'))
+            ) {
+              return; // swallow
+            }
+            return origError.apply(console, arguments);
+          };
+        })();
+      }
+    </script>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <!-- This must exist and be named exactly "root" -->
+    <div id="root"></div>
+  </body>
+</html>

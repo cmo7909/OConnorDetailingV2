@@ -1,0 +1,59 @@
+.package-card {
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+  border: 2px solid rgba(0, 0, 0, 0.05);
+  color: #1f2937; /* dark slate gray for good readability */
+  font-family: 'Poppins', 'Raleway', 'Nunito', sans-serif;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  cursor: default;
+  user-select: none;
+}
+
+/* The dynamic background colors and gloss gradient are applied inline from React */
+
+/* Hover effect to lift and emphasize */
+.package-card:hover {
+  transform: translateY(-4px) scale(1.03);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.15);
+  border-color: rgba(0, 0, 0, 0.1);
+  outline: none;
+}
+
+/* Titles */
+.package-card > h2 {
+  font-weight: 700;
+  margin-bottom: 16px;
+  font-size: 1.8rem;
+}
+
+/* Section container */
+.package-card .section {
+  margin-bottom: 18px;
+}
+
+/* Section titles */
+.package-card .section > h3 {
+  font-weight: 600;
+  margin-bottom: 8px;
+  font-size: 1.3rem;
+  color: #111827; /* slightly darker for subheadings */
+}
+
+/* Lists */
+.package-card ul {
+  padding-left: 20px;
+  margin: 0;
+  list-style-type: disc;
+}
+
+.package-card li {
+  margin-bottom: 6px;
+  font-size: 1rem;
+  line-height: 1.4;
+  color: #374151; /* medium gray for item text */
+}
